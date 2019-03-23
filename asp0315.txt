@@ -1,0 +1,41 @@
+서버 구동을 JSP에선 아파치서버에서씀 (톰켓엔진에서)
+asp.net은 윈도우에서 쓰도록 특화되어있어 여기에 있는 IIS를 쓰면됨
+
+윈도우 기능 사용 및 사용안함
+World Wide Web 서비스 -> 응용프로그램 개발기능 -> Net확장성 asp.net isapi필터 isapi 확장 체크
+
+일반적인 HTTP기능 다 체크
+(HTTP 리디렉션, HTTP 오류 WebDav 게시 기본문서 디렉터리 검색 정적콘텐츠
+
+디렉터리 검색 필수
+
+웹관리 도구 다 체크
+
+C:\inetpub\wwwroot\iisstart.htm ( 현재 인터넷 서버에 로컬 호스트 화면이 이것이다.)
+IIS(인터넷 정보 관리자 서비스) 관리자 -> 응용프로그램 풀 -> 관리되는 파이프라인 모드를 우클릭후 고급설정 -> 클래식으로 바꾸기
+
+Default web site 홈 -> 디렉터리 검색 클릭 후 왼쪽에 사용하기
+Default web site 우클릭 후 가상 디렉터리 만들기 / 설정
+
+(asp-net_n1w.pdf 4쪽)
+runat ="server" 서버에서 수행할거다 언어는 C#쓸꺼고
+Page_Load < 웹페이지를 로드할때 자동으로 수행되는 함수 그리고
+(object sender, System.EventArgs e) 무조껀 받음
+
+<asp:Label id="lblMessage" runat="server" /> (asp에서 제공하는 라벨 형태다. 이 라벨의 아이디는 lblMessage다 수행은 서버에서 {아이디는 위에 Page_load에서 쓴 것과 동일시})
+
+http://localhost/FirstApp.aspx <-
+
+가상디렉터리로 옮기는거 wwwroot에있는 FirstApp파일 복사해서 가상디렉터리 파일에 넣는다.
+그후 가상디렉터리 찾아보기 누르면 위에 파일로 이동
+
+html 를 asp.net으로 바꿀때 비쥬얼 스튜디오 2017 키고 새프로젝트 C# -> 웹 -> 이전버젼 빈웹사이트 클릭 후 만들기
+오른쪽 솔루션 탐색기 ex001 우클릭 -> 추가 -> 새항목 -> Web Form
+html을 asp에서 작업할때 각각이 id를 주면됨
+
+CodeFile < BMI.aspx.cs 는 이웹페이지를 컨트롤하는것
+asp.net은 디자인과 코드를 분리해서 할수있다.
+
+bmi.aspx는 웹페이지 디자인이 다들어가있는상태라 보면됨
+bmi.aspx.cs 는 id 값을 가지고 컨트롤할것
+

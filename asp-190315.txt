@@ -1,0 +1,90 @@
+﻿IIS 설치하기
+제어판 -> 프로그램 및 기능 -> windows 기능 사용/사용 안함
+인터넷 정보 서비스
+	- world wide web서비스  
+		- 응용 프로그램 개발 기능 
+			- .NET 확장성
+			- ASP
+			- ASP.NET
+			- ISAPI 필터
+			- ISAPI 확장
+		- 일반적인 HTTP 기능(다)
+	- 웹 관리 도구(다)
+
+인터넷에서 localhost 연결시 
+C:\inetpub\wwwroot\iisstart.htm (IIS7페이지)와 같은 화면이 떠야함
+
+시작버튼에서 IIS 관리자 검색 클릭 -> 왼쪽 연결창에 컴퓨터 이름 클릭 ->
+응용 프로그램 풀 클릭 -> 두개 중 통합 클릭 -> 오른쪽 마우스 클릭 -> 고급 설정 
+->일반에 관리되는 파일프라인 모드 classic으로 변경 - >확인
+
+응용프로그램 풀 추가 시
+오른쪽 마우스 -> 응용프로그램 풀 추가 -> 이름 설정 -> 
+.NET Framework v4.0.30319 -> 클래식
+
+오른쪽 작업 창에서 웹사이트 관리 -> 중지 후 시작
+
+왼쪽 연결창에서 사이트 -> Default Web SIte -> 디렉터리 검색 ->
+오른쪽 작업창 -> 사용
+
+Default Web SIte -> 오른쪽 마우스 -> 가상 디렉터리 추가 -> 별칭지정 -> 경로지정
+-> 연결 계정 -> 응용프로그램 사용자 -> 확인 -> 설정 테스트 -> 닫기 -> 확인
+-> 왼쪽 연결창에 폴더 생김 클릭 -> 오른쪽 작업 창에  http찾아보기 클릭
+
+메모장에
+<html>
+<head>
+<title> ::::: 반갑습니다! ASP.NET ::::: </title>
+<script language="C#" runat="server">
+void Page_Load(object sender, System.EventArgs e)
+{
+lblMessage.Text = "현재 시각 : " + DateTime.Now.ToString();
+}
+</script>
+</head>
+<body><center><h3> 반갑습니다! ASP.NET </h3>
+<hr width="300" />
+<asp:Label id="lblMessage" runat="server" />
+<hr width="300" />
+</center></body>
+</html>
+붙여넣고 C:\inetpub\wwwroot 폴더에 FirstApp.aspx 로 저장
+인터넷에서 localhost/FirstApp.aspx 치고 확인
+
+visual studio 2017 -> 파일 -> 새 프로젝트 -> Visual C# -> 웹
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
