@@ -1,0 +1,53 @@
+BMI.aspx
+
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="BMI.aspx.cs" Inherits="BMI" %>
+
+<!DOCTYPE html>
+<html>
+ <head>
+	<title>체질량지수 산출기</title>
+    <meta charset="utf-8" />
+ </head>
+ <body>
+ 	//id를 주어서 cs파일에서 작업이 가능하도록 한다
+	<form id="WebForm" runat="server">
+		<div align="center">
+		 신장 :&nbsp;
+		 <input id="Height" type="text" runat="server" />
+		 &nbsp;cm&nbsp;&nbsp;&nbsp;몸무게 :&nbsp;
+		 <input id="Weight" type="text" runat="server" />
+		 &nbsp;kg
+		 <br/><br/>
+		 <input id="Calc" type="submit" value="산출하기"
+             OnServerClick="Calc_ServerClick" runat="server" /> <!-- OnServerClick =  -->
+        <br /><br />
+            <p id="Result" runat="server"> </p>
+		</div>
+	</form>
+ </body>
+</html>
+
+---------------------------------------------------------------------------------------------
+
+BMI.aspx.cs
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class BMI : System.Web.UI.Page
+{
+    //page_load를 지우고 앞 페이지에서 작성한 함수명을 정의해주어야 한다
+    protected void Calc_ServerClick(object sender, EventArgs e)
+    {
+        //Decimal.Parse 10진수로 변환 (int와 같다)
+        decimal height = Decimal.Parse(Height.Value) / 100; //cm > m 단위로 환산
+        decimal weight = Decimal.Parse(Weight.Value);
+        decimal BMI = weight / (height * height);
+        Result.InnerText = "체질량지수(BMI) : " + BMI.ToString();
+        //Result 라는 이름에 Text를 넣어준다
+    }
+}
