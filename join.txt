@@ -1,0 +1,67 @@
+join (단일 페이지 모델)
+
+<%@ Page Language="C#" %>
+
+<!DOCTYPE html>
+
+<script runat="server">
+    protected void button_click1(object sender, EventArgs e)
+    {
+        Response.Write("<center>입력하신 정보는 다음과 같습니다.</center><br />");
+        Response.Write("<center>이름 : " + TextBox1.Text + "</center><br />");
+        Response.Write("<center>학번 : " + TextBox2.Text + "</center><br />");
+        Response.Write("<center>연락처 : "  + TextBox3.Text + "</center><br />");
+    }
+
+    protected void button_click2(object sender, EventArgs e)
+    {
+
+    }
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div align ="center">
+            <table>
+                <tr>
+                    <td>
+                        <asp:Label ID="Label1" runat="server" Text="이름"></asp:Label>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="TextBox1" runat="server" Height="25px" Width="153px" BorderStyle="Double"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Label ID="Label2" runat="server" Text="학번"></asp:Label>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="TextBox2" runat="server" Height="25px" Width="153px" BorderStyle="Double"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Label ID="Label3" runat="server" Text="연락처"></asp:Label>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="TextBox3" runat="server" Height="25px" Width="153px" BorderStyle="Double"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <asp:Button ID="Button1" runat="server" Text="확인"
+                            onClick="button_click1" Height="40px" Width="80px" BackColor="#CCFFCC"/>
+                        <asp:Button ID="Button2" runat="server" Text="전송"
+                            onClick="button_click1" Height="40px" Width="80px" BackColor="#FFFFCC" PostBackUrl="~/post.aspx"/>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>
