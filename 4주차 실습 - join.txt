@@ -1,4 +1,4 @@
-join (´ÜÀÏ ÆäÀÌÁö ¸ğµ¨)
+join (ë‹¨ì¼ í˜ì´ì§€ ëª¨ë¸)
 
 <%@ Page Language="C#" %>
 
@@ -7,10 +7,10 @@ join (´ÜÀÏ ÆäÀÌÁö ¸ğµ¨)
 <script runat="server">
     protected void button_click1(object sender, EventArgs e)
     {
-        Response.Write("<center>ÀÔ·ÂÇÏ½Å Á¤º¸´Â ´ÙÀ½°ú °°½À´Ï´Ù.</center><br />");
-        Response.Write("<center>ÀÌ¸§ : " + TextBox1.Text + "</center><br />");
-        Response.Write("<center>ÇĞ¹ø : " + TextBox2.Text + "</center><br />");
-        Response.Write("<center>¿¬¶ôÃ³ : "  + TextBox3.Text + "</center><br />");
+        Response.Write("<center>ì…ë ¥í•˜ì‹  ì •ë³´ëŠ” ë‹¤ìŒê³¼ ê°™ìŠµë‹ˆë‹¤.</center><br />");
+        Response.Write("<center>ì´ë¦„ : " + TextBox1.Text + "</center><br />");
+        Response.Write("<center>í•™ë²ˆ : " + TextBox2.Text + "</center><br />");
+        Response.Write("<center>ì—°ë½ì²˜ : "  + TextBox3.Text + "</center><br />");
     }
 
     protected void button_click2(object sender, EventArgs e)
@@ -30,7 +30,7 @@ join (´ÜÀÏ ÆäÀÌÁö ¸ğµ¨)
             <table>
                 <tr>
                     <td>
-                        <asp:Label ID="Label1" runat="server" Text="ÀÌ¸§"></asp:Label>
+                        <asp:Label ID="Label1" runat="server" Text="ì´ë¦„"></asp:Label>
                     </td>
                     <td>
                         <asp:TextBox ID="TextBox1" runat="server" Height="25px" Width="153px" BorderStyle="Double"></asp:TextBox>
@@ -38,7 +38,7 @@ join (´ÜÀÏ ÆäÀÌÁö ¸ğµ¨)
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label ID="Label2" runat="server" Text="ÇĞ¹ø"></asp:Label>
+                        <asp:Label ID="Label2" runat="server" Text="í•™ë²ˆ"></asp:Label>
                     </td>
                     <td>
                         <asp:TextBox ID="TextBox2" runat="server" Height="25px" Width="153px" BorderStyle="Double"></asp:TextBox>
@@ -46,7 +46,7 @@ join (´ÜÀÏ ÆäÀÌÁö ¸ğµ¨)
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label ID="Label3" runat="server" Text="¿¬¶ôÃ³"></asp:Label>
+                        <asp:Label ID="Label3" runat="server" Text="ì—°ë½ì²˜"></asp:Label>
                     </td>
                     <td>
                         <asp:TextBox ID="TextBox3" runat="server" Height="25px" Width="153px" BorderStyle="Double"></asp:TextBox>
@@ -54,9 +54,9 @@ join (´ÜÀÏ ÆäÀÌÁö ¸ğµ¨)
                 </tr>
                 <tr>
                     <td colspan="2" align="center">
-                        <asp:Button ID="Button1" runat="server" Text="È®ÀÎ"
+                        <asp:Button ID="Button1" runat="server" Text="í™•ì¸"
                             onClick="button_click1" Height="40px" Width="80px" BackColor="#CCFFCC"/>
-                        <asp:Button ID="Button2" runat="server" Text="Àü¼Û"
+                        <asp:Button ID="Button2" runat="server" Text="ì „ì†¡"
                             onClick="button_click1" Height="40px" Width="80px" BackColor="#FFFFCC" PostBackUrl="~/post.aspx"/>
                     </td>
                 </tr>
