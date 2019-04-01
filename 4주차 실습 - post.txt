@@ -1,4 +1,4 @@
-post (´ÜÀÏ ÆäÀÌÁö ¸ğµ¨)
+post (ë‹¨ì¼ í˜ì´ì§€ ëª¨ë¸)
 
 <%@ Page Language="C#" %>
 
@@ -14,10 +14,10 @@ post (´ÜÀÏ ÆäÀÌÁö ¸ğµ¨)
             TextBox mTextBox2 = (TextBox)Page.PreviousPage.FindControl("TextBox2");
             TextBox mTextBox3 = (TextBox)Page.PreviousPage.FindControl("TextBox3");
 
-            Response.Write("<center>È¸¿ø°¡ÀÔ ³»¿ëÀÔ´Ï´Ù. <br />");
-            Response.Write("<center>ÀÌ¸§ : " + mTextBox1.Text + "</center><br />");
-            Response.Write("<center>ÇĞ¹ø : " + mTextBox2.Text + "</center><br />");
-            Response.Write("<center>¿¬¶ôÃ³ : " + mTextBox3.Text + "</center><br />");
+            Response.Write("<center>íšŒì›ê°€ì… ë‚´ìš©ì…ë‹ˆë‹¤. <br />");
+            Response.Write("<center>ì´ë¦„ : " + mTextBox1.Text + "</center><br />");
+            Response.Write("<center>í•™ë²ˆ : " + mTextBox2.Text + "</center><br />");
+            Response.Write("<center>ì—°ë½ì²˜ : " + mTextBox3.Text + "</center><br />");
         }
         else
         {
