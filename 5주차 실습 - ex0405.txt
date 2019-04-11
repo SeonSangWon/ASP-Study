@@ -1,0 +1,77 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ex0405.aspx.cs" Inherits="ex00.ex0405" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div style="padding-right: 20px; float: left; background-color: #FFFFCC;">
+                <h4>1. 좋아하는 스포츠를 고르세요.</h4>
+
+                <asp:CheckBox ID="CheckBox1"  runat="server" Text="야구"  /><br />
+                <asp:CheckBox ID="CheckBox2"  runat="server" Text="축구"  /><br />
+                <asp:CheckBox ID="CheckBox3"  runat="server" Text="농구"  /><br />
+                <asp:Button ID="Button1" runat="server" Text="선택" OnClick="Button1_Clicked" BackColor="#66FFFF" Height="31px" Width="78px" /><br />
+                <asp:Label ID="Label1" runat="server" ForeColor="#FF0000"></asp:Label>
+
+                <h4>2. 메일링에 가입 여부 체크</h4>
+
+                <asp:CheckBox ID="CheckBox4"  runat="server" Text="메일링 가입" 
+                    OnCheckedChanged="CheckBox4_Clicked" AutoPostBack="true" BorderStyle="Solid"/><br />
+                <asp:Label ID="Label2" runat="server" ForeColor="#FF0000"></asp:Label>
+                <br />
+            </div>
+            <!-- ---------------------------------------------------------------------- -->
+            <div style="padding-left: 20px; float: left; background-color: #CC99FF;">
+                <h4>3. CheckBox List 컨트롤</h4>
+                <asp:CheckBoxList ID="CheckBoxList1" runat="server" AutoPostBack="true">
+                    <asp:ListItem>Java</asp:ListItem>
+                    <asp:ListItem>C++</asp:ListItem>
+                    <asp:ListItem>C#</asp:ListItem>
+                    <asp:ListItem>Python</asp:ListItem>
+                </asp:CheckBoxList>
+                <br />
+                
+                <asp:Button ID="Button2" runat="server" Text="확인" OnClick="Button2_Clicked" BackColor="#99FF99" Height="34px" style="margin-top: 0px" Width="177px" />
+                <br /><br />
+
+                <asp:Label ID="Label6" runat="server" Text=""></asp:Label>
+        </div>
+
+            <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+            <!-- ---------------------------------------------------------------------- -->
+            <div style="background-color: #99FFCC; padding-right: 20px; float: left;">
+                <h4>4. DropDownList 컨트롤 예제</h4>
+                <!-- AutoPostBack = "true" 현재화면에서 클릭하는 동시에 바로 postBack한다. -->
+                <asp:DropDownList ID="DropDownList1" runat="server"
+                    AutoPostBack="true">
+                    <asp:ListItem Value="연필">Pencile</asp:ListItem>
+                    <asp:ListItem Value="책">Book</asp:ListItem>
+                    <asp:ListItem Value="필통">PencileCase</asp:ListItem>
+                </asp:DropDownList>
+                <asp:Button ID="Button3" runat="server" Text="Button" OnClick="Button3_Clicked" BackColor="#FFCCFF" Width="94px" />
+                <br />
+                <asp:Label ID="Label3" runat="server" Text=""></asp:Label><br />
+                <asp:Label ID="Label4" runat="server" Text=""></asp:Label><br />
+                <asp:Label ID="Label5" runat="server" Text=""></asp:Label><br />
+
+                <br />
+
+                <asp:FileUpload ID="FileUpload1" runat="server" BorderStyle="Double" />
+                <asp:Button ID="Button4" runat="server" Text="파일 업로드" OnClick="Button4_Clicked" />
+                <br />
+
+                <asp:Label ID="Label7" runat="server" Text=""></asp:Label><br />
+                <asp:Label ID="Label8" runat="server" Text=""></asp:Label><br />
+                <asp:Label ID="Label9" runat="server" Text=""></asp:Label>
+
+            </div>
+        </div>
+    </form>
+</body>
+</html>
