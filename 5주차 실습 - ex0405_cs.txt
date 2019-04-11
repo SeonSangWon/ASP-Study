@@ -1,0 +1,114 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace ex00
+{
+    public partial class ex0405 : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            //첫 화면일 경우
+            if(! Page.IsPostBack)
+            {
+                List<String> list = new List<string>(); //필요한 자료구조를 선언
+                list.Add("Book");
+                list.Add("Pencile");
+                list.Add("Note");
+                list.Add("Eraser");
+
+                //DropDownList의 항목을 list에 있는 속성으로 사용하겠다.
+                //웹폼의 DataSource에 자료구조를 맵핑
+                DropDownList1.DataSource = list;    
+                //DataSource에서 Data를 불러낸다
+                DropDownList1.DataBind();
+            }
+            //PostBack을 했을 경우(페이지를 다시 게시했을 경우)
+            else
+            {
+
+            }
+        }
+
+        //CheckBox
+        protected void Button1_Clicked(object sender, EventArgs e)
+        {
+            Label1.Text = "선택한 스포츠 : ";
+
+            if(CheckBox1.Checked)
+            {
+                Label1.Text += CheckBox1.Text + " ";
+            }
+            if (CheckBox2.Checked)
+            {
+                Label1.Text += CheckBox2.Text + " ";
+            }
+            if (CheckBox3.Checked)
+            {
+                Label1.Text += CheckBox3.Text + " ";
+            }
+        }
+
+        //CheckBox
+        protected void CheckBox4_Clicked(object sender, EventArgs e)
+        {
+            if (CheckBox4.Checked)
+                Label2.Text = "당신은 메일링에 가입하셨습니다.";
+            else
+                Label2.Text = "당신은 메일링에 가입하지 않습니다.";
+        }
+
+        //DropBoxList
+        protected void Button3_Clicked(object sender, EventArgs e)
+        {
+            Label3.Text = "선택한 항목의 Index : " + DropDownList1.SelectedIndex;
+            Label4.Text = "선택한 항목의 Text : " + DropDownList1.SelectedItem.Text;
+            Label5.Text = "선택한 항목의 Value : " + DropDownList1.SelectedItem.Value;
+        }
+
+        //CheckBoxList
+        protected void Button2_Clicked(object sender, EventArgs e)
+        {
+            Label6.Text = "선택한 항목은 ";
+
+            foreach (ListItem li in CheckBoxList1.Items)
+            {
+                if (li.Selected)
+                {
+                    //선택한 항목은 Java C++ C# Python
+                    Label6.Text += li.Value + " ";
+                }
+            }
+
+        }
+
+        //Fileupload Button
+        protected void Button4_Clicked(object sender, EventArgs e)
+        {
+
+            //업로드 파일이 있을경우
+            if (this.FileUpload1.HasFile)
+            {
+                //C\uploads 폴더 안에 업로드된 파일 복사
+                FileUpload1.SaveAs("C:\\uploads\\" +
+                    FileUpload1.FileName);
+  
+                Label7.Text = "파일명 : ";
+                Label8.Text = "콘텐츠타입 : ";
+                Label9.Text = "파일크기 : ";
+
+                Label7.Text += this.FileUpload1.FileName;
+                Label8.Text += this.FileUpload1.PostedFile.ContentType;
+                Label9.Text += this.FileUpload1.PostedFile.ContentLength + "bytes";
+            }
+            else
+            {
+                Label7.Text = "업로드 파일이 없습니다.";
+            }
+    
+}
+    }
+}
