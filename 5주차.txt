@@ -1,0 +1,71 @@
+CheckBox
+- AutoPostBack : true 일 경우
+체크하는 동시에 PostBack이 일어난다.
+
+-----------------------------------------------------
+CheckBoxList
+- AutoPostBack : true
+체크하는 동시에 PostBack이 일어난다.
+
+ListItem형식의 변수를 생성하여
+해당 변수안에 순차적으로 Data를 넣는다.
+
+foreach(ListItem li in CheckBoxList1.items)
+{
+	//CheckBoxList가 선택되었을 경우
+	if(li.Selected)
+	{
+	  //value를 선택된만큼 넣는다.
+	  Label.Text += li.Value + " ";
+	}
+}
+
+-----------------------------------------------------
+FileUpload
+
+//업로드 파일이 있을경우
+if(this.FileUpload1.HasFile)
+{
+  //업로드된 파일의 파일명
+  Label1.Text += this.FileUpload1.FileName;
+  //업로드된 파일의 형식
+  Label1.Text += 	 		this.FileUpload1.PostedFile.ContentType;
+  //업로드된 파일의 크기
+  Label1.Text += 
+	this.FileUpload1.ContentLength;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
