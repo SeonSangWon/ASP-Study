@@ -1,0 +1,143 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ex0412.aspx.cs" Inherits="ex00.ex0412" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="true" 
+                OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+                <asp:ListItem>View1</asp:ListItem>
+                <asp:ListItem>View2</asp:ListItem>
+                <asp:ListItem>View3</asp:ListItem>
+            </asp:DropDownList>
+        </div>
+        <hr />
+        
+        <!-- ActiveViewIndex : MultiView안에 있는 View의 인덱스를 가져옴 -->
+        <!-- ActiveViewIndex : -1로 줄 경우 맨 처음 아무것도 안나온다. -->
+        <asp:MultiView ID="MultiView1" runat="server" ActiveViewIndex="0">
+            <asp:View ID="View1" runat="server">
+                <h2>View 1</h2>
+
+        <div> 
+            <h3>1.HiddenField 예제------</h3>
+            <!-- HiddenField 핸들링 가능한 값: Value -->
+            <!-- 추후 접속자 인원 수, 명단 수 등등 클릭한 값을 저장하고 싶을 때 보이지 않지만 값 저장 가능-->
+            <asp:HiddenField ID="HiddenField1" runat="server"/>
+            <asp:Button ID="Button1" runat="server" Text="버튼" OnClick="Button1_Click"/><br />
+            <asp:Label ID="Label1" runat="server" Text=""></asp:Label><br /><br />
+        </div>
+
+        <div>
+            <h3>2.HyperLink 예제------</h3>
+            <!-- HyperLink 원하는 링크로 이동 Text/Image로 이동 가능하다. -->
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="https://www.microsoft.com/ko-kr" Target="_blank">
+                MicroSoft</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="https://www.microsoft.com/ko-kr" Target="_blank"
+                ImageUrl="~/imgs/microsoft.jpg">
+                HyperLink</asp:HyperLink>
+            <br /><br />
+        </div>
+
+        <div>
+           <h3> 3.Image Controll 예제------</h3>
+            <!-- AlternateText : 이미지를 대체할 글자 -->
+            <!-- ToolTip ; 이미지에 마우스를 갖다대면 이미지 설명 텍스트 나옴 -->
+            <asp:Image ID="Image1" runat="server" Width="400" Height="150"/><br />
+            <!-- AutoPostBack : 컨트롤의 변경이 있을경우 다시 게시가 일어난다.-->
+            <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="True">
+                <asp:ListItem>Kakao</asp:ListItem>
+                <asp:ListItem>MicroSoft</asp:ListItem>
+                <asp:ListItem>Yuhan</asp:ListItem>
+            </asp:DropDownList>
+        </div>
+            </asp:View>
+<!-- ----------------------------------------------------------------------------------------------------------- -->
+        <asp:View ID="View2" runat="server">
+            <h2>View 2</h2>
+         <div>
+            <h3>4.ImageButton Controll 예제------</h3>
+            <!-- -->
+            <asp:ImageButton ID="ImageButton1" runat="server"  ImageUrl="~/imgs/naver.JPG" ToolTip="그림 버튼1번 입니다."
+                Height="45" Width="200" OnClick="ImageButton1_Click" /><br />
+            <asp:Label ID="Label2" runat="server" Text=""></asp:Label><br />
+            <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/imgs/google.JPG" ToolTip="그림 버튼2번 입니다."
+                Height="45" Width="200" OnClick="ImageButton2_Click"/>
+            <br />
+            <asp:Label ID="Label3" runat="server" Text=""></asp:Label>
+        </div>
+
+        <div>
+            <h3>5.ImageMap Controll 예제------</h3>
+            <!-- Rectangle모양 -->
+            <!-- 홈페이지 제작 할 때 지도 생성할 경우, A구역을 클릭할 경우 A구역이라고 표시가 되게끔 만들어 줄 수 있다.-->
+            <asp:ImageMap ID="ImageMap1" runat="server" ImageUrl="~/imgs/microsoft2.jpg" BorderStyle="Solid" BorderWidth="1px"
+                OnClick="ImageMap1_Click">
+                
+                <asp:RectangleHotSpot AlternateText="hotSpot1" HotSpotMode="PostBack" PostBackValue="hotSpot1" 
+                    Bottom="30" Left="175" Right="120" Top="400" />
+                <asp:RectangleHotSpot AlternateText="hotSpot2" HotSpotMode="PostBack" PostBackValue="hotSpot2"
+                    Bottom="300" Left="200" Right="500" Top="30" />
+            </asp:ImageMap>
+            <br />
+            <asp:Label ID="Label4" runat="server" Text=""></asp:Label>
+        </div>
+
+        </asp:View>
+<!-- ----------------------------------------------------------------------------------------------------------- -->
+            <asp:View ID="View3" runat="server">
+                <h2>View 3</h2>
+                <div>
+                    <h3>6.ListBox 컨트롤 예제------</h3>
+                    <!-- SelectionMode="Multiple" 다중선택 -->
+                    <asp:ListBox ID="ListBox1" runat="server" AutoPostBack="true" SelectionMode="Multiple">
+                        <asp:ListItem>JavaFramework</asp:ListItem>
+                        <asp:ListItem>ASP.NET</asp:ListItem>
+                        <asp:ListItem>C#</asp:ListItem>
+                        <asp:ListItem>DataBase</asp:ListItem>
+                    </asp:ListBox>
+                    <asp:Button ID="Button2" runat="server" Text="선택" OnClick="Button2_Click"/><br />
+                    <asp:Label ID="Label5" runat="server" Text=""></asp:Label><br />
+                    <!--Literal은 Label 과 비슷하다. -->
+                    <!--둘의 차이점 : Literal은 CSS(Style)적용 불가능하다. -->
+                    <!--꾸밈없이 값만 뿌려주고 싶을 때 사용한다. -->
+                    <!--Literal의 text를 주기 전까진 공간을 차지하지않는다.-->
+                    <!--Literal는 특정한 위치에 값만 뿌려준다. -->
+                    <asp:Literal ID="Literal1" runat="server"></asp:Literal>
+                </div>
+            </asp:View>
+
+        </asp:MultiView>
+        <hr />
+
+        <asp:DropDownList ID="DropDownList3" runat="server"
+                 AutoPostBack="true" OnSelectedIndexChanged="DropDownList3_SelectedIndexChanged">
+            <asp:ListItem>View 1</asp:ListItem>
+            <asp:ListItem>View 2</asp:ListItem>
+
+        </asp:DropDownList>
+        <br />
+        <asp:MultiView ID="MultiView2" runat="server" ActiveViewIndex ="0">
+            <asp:View ID="View4" runat="server">
+               
+                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                <asp:Button ID="Button3" runat="server" Text="Button" />
+            </asp:View>
+
+            <asp:View ID="View5" runat="server">
+
+                <asp:Image ID="Image2" runat="server" ImageUrl="~/imgs/로고.JPG" />
+            </asp:View>
+        </asp:MultiView>
+
+        
+        
+    </form>
+</body>
+</html>
