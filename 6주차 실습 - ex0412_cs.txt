@@ -1,0 +1,84 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace ex00
+{
+    public partial class ex0412 : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (DropDownList2.SelectedIndex == 0)
+                Image1.ImageUrl = "~/imgs/kakao.JPG";
+            else if (DropDownList2.SelectedIndex == 1)
+                Image1.ImageUrl = "~/imgs/microsoft2.jpg";
+            else
+                Image1.ImageUrl = "~/imgs/유한대학교.JPG";
+
+            //이미지에 마우스 포인터를 가져다댈경우 나올 설명 텍스트
+            Image1.AlternateText = DropDownList2.SelectedItem.Text;
+        }
+
+        //HiddenField
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            if (HiddenField1.Value == "")
+                HiddenField1.Value = "0";
+            int count = int.Parse(HiddenField1.Value) + 1;
+
+            //초기값 count를 HiddenField1의 value값으로 할당
+            HiddenField1.Value = count.ToString();
+            Label1.Text = "버튼의 클릭 수 : " + HiddenField1.Value;
+        }
+
+        //ImageButton
+        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        {
+            //클릭한 부분의 X값 과 Y값을 받아서 출력
+            Label2.Text = String.Format("ImageButton1 <br /> X좌표 : {0} Y좌표 : {0}",e.X, e.Y);
+        }
+
+        //ImageButton
+        protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
+        {
+            Label3.Text = String.Format("ImageButton2 <br /> X좌표 : {0} Y좌표 : {0}", e.X, e.Y);
+        }
+
+        //ImageMap
+        protected void ImageMap1_Click(object sender, ImageMapEventArgs e)
+        {
+            Label4.Text = e.PostBackValue + "가 선택되었습니다.";
+        }
+
+        //ListBox
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Label5.Text = "수강한 과목명 : ";
+
+            for(int i=0; i<ListBox1.Items.Count; i++)
+            {
+                if(ListBox1.Items[i].Selected)
+                {
+                    Label5.Text += ListBox1.Items[i].Text + " ";
+                }
+            }
+        
+        }
+
+        //MultiView
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //DropDownList 인덱스에 맞게 MultiView의 인덱스 변경
+            MultiView1.ActiveViewIndex = DropDownList1.SelectedIndex;
+        }
+
+        protected void DropDownList3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MultiView2.ActiveViewIndex = DropDownList3.SelectedIndex;
+
+        }
+    }
+}
