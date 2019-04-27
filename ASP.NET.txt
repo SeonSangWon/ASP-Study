@@ -1,0 +1,358 @@
+※18문제 ~ 20문제 정도
+
+1장 - 3문제정도 나온다.
+
+2. ASP.NET의 이해(1장 - 10p)
+-.NET은 XML 웹서비스 플랫폼이다.
+-XML을 통해 이 기종 간의 시스템을 통합하기
+위한 플랫폼
+
+.NET은 .NET플랫폼이있고 그중에 .NET Framework
+와 ASP.NET이 포함되어있다.
+
+ASP.NET
+-프로그래밍 프레임 워크
+(프로그래밍했을때 필요한것들만 모아서 
+전체적으로 무리없이 수행되도로 도와주는 것)
+
+
+1장 - 12p (순서와 내용 기억하기)
+발전 과정 : CGI >ISAP > IDC > ASP > ASP.NET  
+
+CGI : 실행 파일형식
+ISAP : DLL 방식(도큐먼트 라이브러리)
+IDC : 스크립트 방식
+ASP : 서버측의 엔진(Inline 방식)
+ASP.NET : .NET 프레임워크 방식
+
+1장 - 13p
+ASP.NET 설명 4가지 기억하기
+※스크립트 언어가 아닌 프로그래밍 프레임워크이다.
+ASP는 언어. ASP.NET은 기술(프로그램이 프레임워크)
+
+1장 - 15p
+ASP.NET의 특징 (자세하게 기억해두기)
+-이벤트 기반 프로그래밍 모델
+-컨트롤 기반 페이지
+-언어 독릭적인 플랫폼 제공
+-Code-Behind 모델
+
+1장 - 18p
+성능향상 과 다양한 웹 브라우저의 지원 
+
+1장 - 20p
+IIS를 설치한 환경에서 설치해야한다.
+
+1장 - 26p ~ 29p
+IIS - Windows에서 제공하는 서버
+홈 디렉터리 / 가상 디렉터리
+
+공식적으로 지정된 URL
+홈 디렉터리 : C\inetpub\wwwroot 폴더
+
+가상 디렉터리
+[하위 디렉터리가 아닌 웹 사이트의 하위 디렉터리
+로 인식한다.]
+임의 드라이브, 임의 폴더에 저장 가능
+※가상 경로와 실제 경로를 서로 대응시키는 작업 필요
+가상 디렉터리를 만들어줌으로써 보안에 신경쓸 수
+있다. + 공간 부족현상 해소
+
+1장 - 33p
+ASP.NET의 특징 / 가상 디렉터리 참고
+
+---------------------------------------------------------
+1장 실습 - 16p
+ASP와 ASP.NET의 큰 차이
+13p - 17p 둘이 비교해서 알아두기
+-서버 컨트롤로 바꾸기
+태그에 runat = "server"
+-id속성 값 넣기
+
+2개를 넣음으로써 ASP에서 ASP.NET으로 바꿀 수 있다.
+ ---------------------------------------------------------
+2장 실습 - 2p 5문제정도 출제
+웹 폼의 코드 모델
+-단일 파일 페이지 모델(.aspx)
+파일 하나에 코드부분 과 표현부분을 갖는다.
+	    (Logic)        (Display) 
+
+-코드 숨김 페이지 모델
+표현되는 부분 : aspx파일
+내부로직 부분 : aspx.cs (C#파일)
+
+2장 실습 - 3p
+Page_Load() : 웹 폼이 로드될 때 실행
+
+2장 실습 - 4p
+단일 페이지 모델 생성
+<Page Language = "C#">
+
+코드 숨김 페이지 모델
+<%@ Page Language="C#" AutoEventWireup="true"
+CodeFile="ex_2.aspx.cs" Inherits="ex_2" %>
+7p와 같이 기억하기
+
+AutoEventWireUp / CodeFile / Inherits
+
+※소스 주고선 틀린부분 찾기 혹은 비어있는 부분
+채우기 문제 나올 수 있다
+
+2장 실습 - 8p
+코드 숨김 페이지 모델 
+-using System 싹다 기억해야함(5개)
+
+2장 실습 - 9p
+단일 파일 페이지 모델의 장단점
+코드 숨김 페이지 모델의 장단점
+
+2장 실습 - 12~13p
+웹 폼의 주요 이벤트 및 처리기의 순서 
+13p의 이벤트에 대한 함수명 기억해두기
+버튼 등의 동작은 Load와 PreRender사이에서 수행됌
+최종적으로 preRender에서 수행됌
+
+2장 실습 - 16~p
+다시 게시(PostBack)
+페이지 간 게시(Cross-Page Posting)
+
+if(Page.IsPostBack) else 활용되는거 잘 기억하기.
+1문제 
+
+---------------------------------------------------------
+3장 -2p
+서버 컨트롤 
+-서버에서 실행
+-HTML로 결과 출력
+-독립된 하나의 .NET 클래스 
+우리가 배운것 : [표준 웹 컨트롤]
+※유효성 검사 컨트롤까지 시험 출제
+
+3장 - 9p 1문제 이런식으로 출제
+BulletedList의 클릭 이벤트 시 수행될 함수 
+BulletedList3_Click
+선택한 항목의 인덱스 : 
+선택한 항목의 Text :
+선택한 항목의 Value : 
+이벤트 함수명이 태그안에 onClick=""안에 있는지
+
+3장 - 12p
+Button
+-OnClientClick
+-PostBackUrl
+
+3장 - 19p
+Calender 코드 외울필요 X
+
+3장 - 21p
+CheckBox
+-AutoPostBack
+-onCheckedChanged
+
+코딩X
+서버 컨트롤과 웹 폼의 연결에 대한 부분 중심
+
+여기까지 대략 12문제정도 나옴
+6~7문제 
+---------------------------------------------------------
+4장 - 4p
+HyperLink
+-NavigateUrl : 이벤트 발생 시, 이동하고자 하는 
+웹 페이지
+-ImageUrl : 현재 서버컨트롤의 표현하고싶은 
+이미지 경로
+-Target(
+_self(자기 포커스가 있는 부분에 뜨게함)
+_blank(새 창)
+_top(프레임을 덮고 보여준다)
+)
+
+4장 - 5p
+Image
+-Tooltip : 설명 Text
+
+4장 - 6p
+ImageButton
+-onClientClick : 페이지 이동이 아닌 다른 작업
+-IamgeUrl
+-AlternateText : 이미지가 안 뜰경우 대체할 글자
+-PostBackUrl : 클릭 발생 시, 이동할 페이지
+이미지 버튼의 속성값이 어떻게 들어가있는지
+확인하는 문제
+
+onClientClick = 속성
+Click = 이벤트
+
+4장 - 7p
+ImageMap
+-특정 영역 분할
+
+4장 - 11p
+ListBox
+-SelectedIndex : 선택한 항목의 인덱스를 가져옴
+-SelectedItem : 선택한 항목의 개체를 가여옴
+구분해서 코드 확인해둘 것
+
+4장 - 14p
+Literal 과 Label의 차이점 
+Literal : 단순 문자열만 특정위치에 출력한다.
+Label : 문자열 출력 + 서식 지정(스타일을 줄 수있다)
+
+4장 - 15p
+MultiView 와 View 
+-항상 같이 사용되며 그룹핑하는 컨테이너 역할
+
+4장 - 16p
+MultiView 컨트롤
+-ActiveViewIndex : 활성된 View의 인덱스를 가져옴
+-Views : View의 컬렉션을 가져옴
+-Visible : 보임 여부
+
+View 컨트롤
+-Controls : Control개체의 컬렉션 가져온다
+-Visible : 보임 여부
+
+
+각각의 속성 값 잘 기억해두기(과제 제출 코드 참고)
+
+4장 - 20p
+Panel
+-MultiView와 View같이 그룹핑하는 역할을 한다
+panel위에 올려진 모든 요소들을 묶어준다
+목적 : 묶음 별로 보여주고 싶을 때 사용한다
+(게시판에서 부분부분 틀을 주고 사용하는 느낌)
+(일정 구역을 정해서 위에 올려진 모든 요소를
+같은 구역으로 묶는다)
+-Visible
+-BackImageUrl
+-ScrollBars : 스크롤바를 사용할 수 있다
+
+4장 - 24p
+RadioButton
+-GruopName : 동일 지정명중 한개만 선택되게 함
+-AutoPostBack
+-CheckedChaged : 이벤트
+
+4장 - 27p
+RadioButtonList
+-SelectedIndex
+-SelectItem
+
+---------------------------------------------------------
+※Config건들이기 (프린또에 없슴)
+도구상자 > Substitution(대체 컨트롤)
+- 캐싱작업에 사용
+- 해석후 가져오는게 아니라 해석된 페이지를 가져옴
+
+요구하는 명령에서 수행된게 있다면
+다시 수행 후 결과를 가져오는게 아니라
+수행 된 결과를 가져온다.
+(서버에서 실행시켜서 결과값을 갖고오는게 아니라
+대체 값을 보여주도록하는 컨트롤)
+
+서버에 명령이 들어올 때 어느 조건이 만족된다면
+대체 함수로써 대체 값을 보여준다.
+
+---------------------------------------------------------
+5장 - 4p
+Table
+- Rows 와 Cells
+
+5장 - 13p
+Wizard (트랜젝션과 비슷)
+-일련의 순서를 가지는 한 묶음으로 사용하는 
+컨트롤
+
+Wizard Step
+Step By Step을 묶음으로 해서 사용한다.
+-Start형식 : 최초화면 <다음>버튼
+-Step형식 : 중간 <이전> <다음>버튼
+-Finish형식 : 마지막 <마침>
+-Complete형식 : 모두 사라지고 콘텐츠 부분만 남는다
+4장 - 18p 사진 참고
+
+※버튼을 누를 때마다 다음 STEP으로 넘어간다
+
+5장 - 21p
+XML
+xml문서의 내용을 웹 페이지에 출력
+-XSLT : xml문서의 양식을 지정해 줄 수 있다.
+
+DocumentSource=xml로 작성된 내용
+TransfromSource=xml을 보여줄 양식(xslt)
+
+5장 - 24p
+XML에서 값을 불러와 웹에서 보여준다.
+
+---------------------------------------------------------
+6장 - 유효성 검사 서버컨트롤 (웹 Config)
+
+오류 발생 시 넣으면 된다.
+<appSettings>
+<add key="ValidationSettings:UnobtrusiveValidationMode"
+value="None" />
+</appSettings> 
+
+6장 - 2p
+-RequiredFieldValidator 
+필수 입력 사항을 검사
+(ex: 회원가입 시 필수입력 값을 검사한다)
+-ErrorMessage : 없을 경우, 오류 메시지
+-InitialValue : 초기값
+-ValidationGroup : 여기서 여기까지 그룹을 지정하여
+한개라도 빠질 경우 ErrorMessage 출력
+-SetFocusOnError : 정보가 유효하지 않은 경우,
+해당 컨트롤에 포커스를 지정하게 해준다.
+4p 소스보면서 이해하기
+
+6장 - 7p
+CompareValidator
+두 개의 값을 비교 연산할 때 사용
+(비밀번호, 비밀번호 확인과 비교)
+-ControlToValidate : 검사할 대상
+-ControlToCompare : 비교 대상
+-Type : 데이터 형식(default값 : String형)
+
+6장 - 10p
+RangeValidator
+입력 값이 특정 범위안에 있는 지 검사할 때 사용
+(최소값 - 최대값)
+
+6장 - 13p
+RegularExpressionValidator (정규식 표현 ,검사 컨트롤)
+사용자의 입력 값이 정규식 패턴을 따르는지에 대한
+검사
+15p 소스보면서 이해하기
+(ex : 우편번호 123-456)
+TextBox1을 검사한다. 오류 시 우편번호 형식이 잘못되었습니다. 라고 출력한다. 오류 시 포커스를 지정해준다
+정규식은 숫자3자리 - 숫자3자리이다.
+
+※문제 :소스를 보여주고 어떠한 컨트롤을 사용하였는
+가
+
+6장 - 16p
+CustomValidator(나중에 많이 쓴다.)
+개발자가 임의로 정의한 유효성 검사 로직을 검사
+-ClientValidationFunction : 유효성 검사에 사용될 
+함수명
+ex: 카드번호 입력할땐 함수명으로 카드회사에서
+사용하는 유효성검사 함수명을 적어준다.
+※둘이 매핑이 중요
+
+18p 소스보고 이해하기
+ClientValidationFunction="MultiOfThree"
+function MultiOfThree(Source, arguments) {
+	//내용
+}
+
+
+
+
+
+
+
+
+
+
+
+
