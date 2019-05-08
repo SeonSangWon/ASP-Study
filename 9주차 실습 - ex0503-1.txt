@@ -10,10 +10,11 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <!--  -->
             ID : <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-            <!-- ControlToValidate : °Ë»çÇÒ ÄÁÆ®·ÑÀÇ ID -->
-            <!-- ErrorMessage : À¯È¿ÇÏÁö¾ÊÀ» °æ¿ì ³ª¿À´Â ¸Þ½ÃÁö -->
-            <!-- SetFocusOnError : ¿¡·¯ ¹ß»ý ½Ã, Ä¿¼­°¡ ÇØ´ç ÄÁÆ®·Ñ¿¡ ÀÖµµ·Ï ¼³Á¤ -->
+            <!-- ControlToValidate : ê²€ì‚¬í•  ì»¨íŠ¸ë¡¤ì˜ ID -->
+            <!-- ErrorMessage : ìœ íš¨í•˜ì§€ì•Šì„ ê²½ìš° ë‚˜ì˜¤ëŠ” ë©”ì‹œì§€ -->
+            <!-- SetFocusOnError : ì—ëŸ¬ ë°œìƒ ì‹œ, ì»¤ì„œê°€ í•´ë‹¹ ì»¨íŠ¸ë¡¤ì— ìžˆë„ë¡ ì„¤ì • -->
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Please input ID"
                 ControlToValidate="TextBox1" SetFocusOnError="true">
             </asp:RequiredFieldValidator>
@@ -24,7 +25,7 @@
             <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
             <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server"
                 ControlToValidate="TextBox3" ValidationExpression="\d{3}-\d{4}-\d{4}"
-                ErrorMessage="ÀüÈ­¹øÈ£¸¦ Á¦´ë·Î ÀÔ·ÂÇØÁÖ¼¼¿ä.">
+                ErrorMessage="ì „í™”ë²ˆí˜¸ë¥¼ ì œëŒ€ë¡œ ìž…ë ¥í•´ì£¼ì„¸ìš”.">
 
             </asp:RegularExpressionValidator>
 
