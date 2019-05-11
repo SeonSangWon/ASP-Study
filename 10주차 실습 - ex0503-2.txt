@@ -1,0 +1,77 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ex0503-2.aspx.cs" Inherits="ex00.ex0503_2" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+            <!-- ControlToValidate : 검사할 컨트롤의 ID -->
+            <!-- ErrorMessage : 유효하지않을 경우 나오는 메시지 -->
+            <!-- SetFocusOnError : 에러 발생 시, 커서가 해당 컨트롤에 있도록 설정 -->
+            <!-- Display="Static" : 유효성검사 컨트롤의 에러메시지가 나올 자리를 차지함-->
+            <!-- Display="Dynamic" : 유효성검사 컨트롤의 자리를 차지하지 않음 -->
+    <form id="form1" runat="server">
+        <div>
+            <asp:Table ID="Table1" runat="server">
+                <asp:TableRow>
+                    <asp:TableCell>비밀번호</asp:TableCell>
+                    <asp:TableCell>
+                        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Please input PW"
+                            ControlToValidate="TextBox1" SetFocusOnError="true" Display="Dynamic">
+                        </asp:RequiredFieldValidator>
+                    </asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+            <!-- ControlToValidate : 비교할 항목의 컨트롤 ID -->
+            <!-- ControlToCompare : 비교할 항목의 대상이 되는 컨트롤의 ID -->
+                    <asp:TableCell>비밀번호 확인</asp:TableCell>
+                    <asp:TableCell><asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                        <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToValidate="TextBox2"
+                            ControlToCompare="TextBox1" SetFocusOnError="true"
+                            ErrorMessage="비밀번호가 틀립니다." Display="Dynamic">
+                        </asp:CompareValidator>
+                    </asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+            <!-- MaximumValue : 입력받을 최대 값 -->
+            <!-- MinimumValue : 입력받을 최소 값-->
+            <!-- Type : 입력받을 데이터의 데이터타입 -->
+                    <asp:TableCell>숫자를 입력하세요(1~10)</asp:TableCell>
+                    <asp:TableCell><asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+                         <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="TextBox3"
+                            MaximumValue="10" MinimumValue="1" Type="Integer" SetFocusOnError="true"
+                            ErrorMessage="1~10사이의 숫자만 입력가능합니다." Display="Dynamic">
+                        </asp:RangeValidator>
+                    </asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+            <!-- ValidationExpression : 유효성 검사에 사용될 정규식 -->
+                    <asp:TableCell>전화번호(예)000-0000-0000) </asp:TableCell>
+                    <asp:TableCell><asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server"
+                            ControlToValidate="TextBox4" ValidationExpression="\d{3}-\d{4}-\d{4}"
+                            ErrorMessage="000-0000-0000 형식으로 입력해주세요." Display="Dynamic">
+                        </asp:RegularExpressionValidator>
+                    </asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell>
+                        <asp:Button ID="Button1" runat="server" Text="확인" OnClick="Button1_Click" /></asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell></asp:TableCell>
+                    <asp:TableCell></asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell></asp:TableCell>
+                    <asp:TableCell></asp:TableCell>
+                </asp:TableRow>
+            </asp:Table>
+        </div>
+    </form>
+</body>
+</html>
