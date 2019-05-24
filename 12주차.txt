@@ -1,0 +1,5 @@
+SQLConnection 객체 생성
+
+필수 import작업
+<%@ Import Namespace="System.Data.SqlClient" %>
+
