@@ -1,0 +1,15 @@
+Web.config
+해당 데이터베이스에서 작업하겠다는 선언문 작성
+
+  <connectionStrings>
+    <add name="MyAspDB"
+         connectionString="Data Source=.\SQLEXPRESS_ASP;
+         Initial Catalog=MyDB';
+         Integrated Security=true"
+         providerName="System.Data.SqlClient"/>
+  </connectionStrings>
+
+
+aspx파일에서 작성
+- 데이터베이스 연결문
+SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MyAspDB"].ConnectionString);
