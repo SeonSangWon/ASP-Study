@@ -1,0 +1,99 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Data.SqlClient;
+using System.Data;
+///using System 2Line작성
+///,NET 확장 사용
+
+
+/// <summary>
+/// Member의 요약 설명입니다.
+/// </summary>
+public class Member
+{
+    string _conString;
+    public Member()
+    {
+        //해당 클래스 내에서 DB연결
+        _conString = System.Configuration.ConfigurationManager.ConnectionStrings["MyAspDB"].ConnectionString;
+
+        
+    }
+
+    //해당 클래스 안에 Select / Update / Delete 작성해주면 aspx파일에서 해당 클래스에 접근해 사용가능함
+    public DataSet SelectMember()
+    {
+        SqlConnection con = new SqlConnection(_conString);
+
+        string sql = "Select * From member";
+        SqlCommand cmd = new SqlCommand(sql, con);
+
+        SqlDataAdapter ad = new SqlDataAdapter();
+        ad.SelectCommand = cmd;
+
+        DataSet ds = new DataSet();
+
+        ad.Fill(ds);
+
+        return ds;
+    }
+
+    public int InsertMember(string userID, string password, string name, string phone)
+    {
+        SqlConnection con = new SqlConnection(_conString);
+
+        string sql = "Insert Into member Values(@UserID, @Password, @Name, @Phone)";
+        SqlCommand cmd = new SqlCommand(sql, con);
+        cmd.Parameters.AddWithValue("@UserID", userID);
+        cmd.Parameters.AddWithValue("@Password", password);
+        cmd.Parameters.AddWithValue("@Name", name);
+        cmd.Parameters.AddWithValue("@Phone", phone);
+        
+
+        con.Open();
+        int count = cmd.ExecuteNonQuery();
+
+        con.Close();
+
+        return count;
+    }
+
+    public int UpdateMember(string userID, string password, string name, string phone)
+    {
+        SqlConnection con = new SqlConnection(_conString);
+
+        string sql = "Update member Set Password=@Password, Name=@Name, Phone=@Phone Where UserID=@UserID";
+
+        SqlCommand cmd = new SqlCommand(sql, con);
+        cmd.Parameters.AddWithValue("@Password", password);
+        cmd.Parameters.AddWithValue("@Name", name);
+        cmd.Parameters.AddWithValue("@Phone", phone);
+        cmd.Parameters.AddWithValue("@UserID", userID);
+
+        con.Open();
+        int count = cmd.ExecuteNonQuery();
+
+        con.Close();
+
+        return count;
+    }
+
+    public int DeleteMember(string userID)
+    {
+        SqlConnection con = new SqlConnection(_conString);
+
+        string sql = "Delete From member Where UserID=@UserID";
+
+        SqlCommand cmd = new SqlCommand(sql, con);
+        cmd.Parameters.AddWithValue("@UserID", userID);
+
+        con.Open();
+        int count = cmd.ExecuteNonQuery();
+
+        con.Close();
+
+        return count;
+    }
+}
