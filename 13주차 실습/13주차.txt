@@ -1,0 +1,92 @@
+ADO.NET
+- .NET Framework 에 포함되어 있는 데이터 액세스 관련 클래스 집합
+- 어떤 .NET Framework 응용 프로그램이라도 ADO.NET을 사용하면,
+데이터베이스와 연동 할 수 있다.
+
+데이터 바인딩 컨트롤
+- 데이터를 바인딩하여 웹페이지에 데이터를 렌더링해주는 서버 컨트롤
+
+데이터 소스 컨트롤
+- 데이터를 저장하고 있는 데이터 소스에 연결해서 조회 입력 수정 삭제
+작업을 자동으로 관리해주는서버 컨트롤
+
+데이터 바인딩 컨트롤 (자세하게 배울 컨트롤)
+- GridView (중요)
+- Repeater
+
+데이터 소스 컨트롤
+- AccessDataSource
+- EntityDataSource
+- SiteMapDataSource
+
+
+Repeater
+- 데이터 소스에서 반환된 레코드의 집합을 반복적으로 표현
+ItemTemplate : 항목 영역을 정의(학번/이름/학년/학과) 중요
+AlternatingTemplate : 교대로 반복되는 영역을 정의
+HeaderTemplate : 머리글 영역 정의
+FooterTemplate : 바닥글 영역 정의
+SeparatorTemplate : 각 항목 사이의 구분 영역을 정의
+
+Repeater
+1. <%@ Import Namespace="System.Data.SqlClient" %>
+2. SqlConnection 개체 생성
+3. SqlCommand 개체 생성
+4. SqlConnection 개체 열기
+5. SqlDataReader 개체 생성
+6. 데이터 바인딩  (해당 부분만 서버컨트롤과 다름)
+7. SqlDataReader 및 SqlConnection 개체 닫기
+
+※서버 컨트롤과 다른 점 정리해놓기
+※본인이 작성해서 쓰는 소스가 아니기 때문에 주의해서 사용해야함
+
+
+DataList1
+- RepeatDirection : 가로/세로 보이기
+- RepeatColumns : 갯수
+
+ex)
+<asp:DataList ID="DataList1" runat="server" RepeatDirection="Horizontal" RepeatColumns="3">
+</asp:DataList>
+가로로 3개 출력 후 다음 줄나오게 하기
+
+SQL객체 일일히 작성하기 힘드니까
+bin폴더에 c#파일로 사용해서 
+import로 함수만 불러오는 식으로 사용하면 편하다.
+
+GridView
+- 데이터를 테이블 형식으로 렌더링해주는 컨트롤
+AutoGenerateColumns : 자동으로 열을 생성할지의 여부
+AllowPaging : 페이징 기능
+	PageSize=""
+EnableModelValidation : 유효성 검사를 할 것인지에 대한 여부
+<asp:BoundField> : 열 생성 (3번쓰면 3열 생성)
+
+- OnPageIndexChanging : 페이지가 변경되는 순간 이벤트 실행
+- OnPageIndexChanged : 페이지가 변경된 후 이벤트 실행
+
+
+
+
+
+비연결기반의 DB 연동 방식
+- DataSet 이라는 가상의 DB를 통해 데이터 관련 작업을 할 수 있도록
+함
+
+※왜 두가지를 써야하는지에 대한 기말고사 문제 출제
+※두 가지의 항목을 Import해주어야 한다.
+<%@ Import Namespace="System.Data.SqlClient" %>
+<%@ Import Namespace="System.Data" %>
+System.Data : 클라이언트를 불러오는게 아닌 DB의 데이터를 불러오는
+	것 까지만 수행(DataSet만들기)
+
+
+
+
+
+
+
+
+
+
+
