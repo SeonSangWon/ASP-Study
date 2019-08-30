@@ -25,7 +25,7 @@ namespace ex00
                 for(int k=0; k<cellCount; k++)
                 {
                     TableCell cell = new TableCell();
-                    cell.Controls.Add(new LiteralControl("(" + i.ToString() + "Çà " + k.ToString() + "¼¿ )"));
+                    cell.Controls.Add(new LiteralControl("(" + i.ToString() + "Ã‡Ã  " + k.ToString() + "Â¼Â¿ )"));
                     row.Controls.Add(cell);
                 }
                 Table1.Rows.Add(row);
@@ -38,3 +38,4 @@ namespace ex00
         }
     }
 }
+
