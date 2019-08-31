@@ -15,52 +15,52 @@
 
             </asp:Table>
             <br />
-            <p>«‡¿« ºˆ : &nbsp;&nbsp;&nbsp; ºø¿« ºˆ :</p>
+            <p>ÌñâÏùò Ïàò : &nbsp;&nbsp;&nbsp; ÏÖÄÏùò Ïàò :</p>
             <asp:DropDownList ID="DropDownList1" runat="server">
-                <asp:ListItem Value="1">1«‡</asp:ListItem>
-                <asp:ListItem Value="2">2«‡</asp:ListItem>
-                <asp:ListItem Value="3">3«‡</asp:ListItem>
-                <asp:ListItem Value="4">4«‡</asp:ListItem>
+                <asp:ListItem Value="1">1Ìñâ</asp:ListItem>
+                <asp:ListItem Value="2">2Ìñâ</asp:ListItem>
+                <asp:ListItem Value="3">3Ìñâ</asp:ListItem>
+                <asp:ListItem Value="4">4Ìñâ</asp:ListItem>
             </asp:DropDownList> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:DropDownList ID="DropDownList2" runat="server">
-                <asp:ListItem Value="1">1ºø</asp:ListItem>
-                <asp:ListItem Value="2">2ºø</asp:ListItem>
-                <asp:ListItem Value="3">3ºø</asp:ListItem>
-                <asp:ListItem Value="4">4ºø</asp:ListItem>
+                <asp:ListItem Value="1">1ÏÖÄ</asp:ListItem>
+                <asp:ListItem Value="2">2ÏÖÄ</asp:ListItem>
+                <asp:ListItem Value="3">3ÏÖÄ</asp:ListItem>
+                <asp:ListItem Value="4">4ÏÖÄ</asp:ListItem>
             </asp:DropDownList><br /><br />
-            <asp:Button ID="Button1" runat="server" Text="≈◊¿Ã∫Ì ª˝º∫" OnClick="Button1_Click" Height="25" Width="100" BackColor="#9999FF" />
+            <asp:Button ID="Button1" runat="server" Text="ÌÖåÏù¥Î∏î ÏÉùÏÑ±" OnClick="Button1_Click" Height="25" Width="100" BackColor="#9999FF" />
             <hr />
             <asp:Table ID="Table2" runat="server" BorderWidth="1">
                 <asp:TableRow>
-                    <asp:TableCell Width="100" HorizontalAlign="Center">¿Ã∏ß</asp:TableCell>
+                    <asp:TableCell Width="100" HorizontalAlign="Center">Ïù¥Î¶Ñ</asp:TableCell>
                     <asp:TableCell>
                         <asp:TextBox ID="TextBox1" runat="server" Text="" Columns="30" BackColor="#A7EEFF"></asp:TextBox></asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow>
-                    <asp:TableCell HorizontalAlign="Center">æ∆¿Ãµ</asp:TableCell>
+                    <asp:TableCell HorizontalAlign="Center">ÏïÑÏù¥Îîî</asp:TableCell>
                     <asp:TableCell>
                         <asp:TextBox ID="TextBox2" runat="server" Text="" Columns="30" BackColor="#BECDFF"></asp:TextBox></asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow>
-                    <asp:TableCell HorizontalAlign="Center">∫Òπ–π¯»£</asp:TableCell>
+                    <asp:TableCell HorizontalAlign="Center">ÎπÑÎ∞ÄÎ≤àÌò∏</asp:TableCell>
                     <asp:TableCell>
                         <asp:TextBox ID="TextBox3" runat="server" Text="" TextMode="Password" Columns="30"
                             BackColor="#FFF064"></asp:TextBox></asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow>
-                    <asp:TableCell HorizontalAlign="Center">¿¸»≠π¯»£</asp:TableCell>
+                    <asp:TableCell HorizontalAlign="Center">Ï†ÑÌôîÎ≤àÌò∏</asp:TableCell>
                     <asp:TableCell>
                         <asp:TextBox ID="TextBox4" runat="server" Text="" Columns="30" BackColor="#FFCAD5"></asp:TextBox></asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow>
-                    <asp:TableCell HorizontalAlign="Center">∏ﬁ∏</asp:TableCell>
+                    <asp:TableCell HorizontalAlign="Center">Î©îÎ™®</asp:TableCell>
                     <asp:TableCell>
                         <asp:TextBox ID="TextBox5" runat="server" Text="" Rows="3" TextMode="MultiLine" Columns="31"
                             BackColor="#7FFFD4"></asp:TextBox></asp:TableCell>
                 </asp:TableRow>
                 <asp:TableFooterRow>
                     <asp:TableCell ColumnSpan="2" HorizontalAlign="Center">
-                        <asp:Button ID="Button2" runat="server" Text="»∏ø¯∞°¿‘" OnClick="Button2_Click" BorderStyle="Double" 
+                        <asp:Button ID="Button2" runat="server" Text="ÌöåÏõêÍ∞ÄÏûÖ" OnClick="Button2_Click" BorderStyle="Double" 
                             BackColor="#CCFFCC" BorderColor="Black" Height="25" Width="100" />
                     </asp:TableCell>
                 </asp:TableFooterRow>
@@ -69,3 +69,4 @@
     </form>
 </body>
 </html>
+
